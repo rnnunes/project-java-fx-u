@@ -1,4 +1,8 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.dao;
+
+import main.projectjfxjdbcv1.DB.DB;
+import main.projectjfxjdbcv1.impl.DepartmentDaoJDBC;
+import main.projectjfxjdbcv1.impl.SellerDaoJDBC;
 
 public class DaoFactory {
 

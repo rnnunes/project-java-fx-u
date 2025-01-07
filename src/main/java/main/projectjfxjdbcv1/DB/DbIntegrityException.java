@@ -1,4 +1,4 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.DB;
 
 public class DbIntegrityException extends RuntimeException {
 	private static final long serialVersionUID = 1L;

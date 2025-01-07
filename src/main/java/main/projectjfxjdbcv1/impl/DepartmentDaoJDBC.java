@@ -1,4 +1,10 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.impl;
+
+import main.projectjfxjdbcv1.DB.DB;
+import main.projectjfxjdbcv1.DB.DbException;
+import main.projectjfxjdbcv1.DB.DbIntegrityException;
+import main.projectjfxjdbcv1.DepartmentModel;
+import main.projectjfxjdbcv1.dao.DepartmentDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,9 +87,9 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		try {
 			st = conn.prepareStatement(
 				"INSERT INTO departamentos " +
-				"(Name) " +
+				"(name, gerente, coordenador) " +
 				"VALUES " +
-				"(?)", 
+				"(?, ?, ?)",
 				Statement.RETURN_GENERATED_KEYS);
 
 			st.setString(1, obj.getName());
@@ -115,8 +121,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		try {
 			st = conn.prepareStatement(
 				"UPDATE departamentos " +
-				"SET Name = ? " +
-				"WHERE Id = ?");
+				"SET name = ?, gerente = ?, coordenador = ?" +
+				"WHERE id = ?");
 
 			st.setString(1, obj.getName());
 			st.setInt(2, obj.getId());
@@ -136,7 +142,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
-				"DELETE FROM departamentos WHERE Id = ?");
+				"DELETE FROM departamentos WHERE id = ?");
 
 			st.setInt(1, id);
 

@@ -1,4 +1,4 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.DB;
 
 import java.io.FileInputStream;
 import java.io.IOException;

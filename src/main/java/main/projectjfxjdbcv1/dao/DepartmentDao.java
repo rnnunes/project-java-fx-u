@@ -1,4 +1,6 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.dao;
+
+import main.projectjfxjdbcv1.DepartmentModel;
 
 import java.util.List;
 

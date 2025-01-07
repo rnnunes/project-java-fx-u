@@ -1,4 +1,10 @@
-package main.projectjfxjdbcv1;
+package main.projectjfxjdbcv1.impl;
+
+import main.projectjfxjdbcv1.DB.DB;
+import main.projectjfxjdbcv1.DB.DbException;
+import main.projectjfxjdbcv1.Department;
+import main.projectjfxjdbcv1.Seller;
+import main.projectjfxjdbcv1.dao.SellerDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
