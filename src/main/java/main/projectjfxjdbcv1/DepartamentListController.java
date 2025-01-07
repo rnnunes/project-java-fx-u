@@ -29,6 +29,12 @@ public class DepartamentListController implements Initializable {
     private TableColumn<DepartmentModel, String> tableColumnName;
 
     @FXML
+    private TableColumn<DepartmentModel, String> tableColumnGerente;
+
+    @FXML
+    private TableColumn<DepartmentModel, String> tableColumnCoordenador;
+
+    @FXML
     private Button btNew;
 
     private ObservableList<DepartmentModel> observableList;
@@ -50,6 +56,8 @@ public class DepartamentListController implements Initializable {
     private void initializeNodes() {
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        tableColumnGerente.setCellValueFactory(new PropertyValueFactory<>("gerente"));
+        tableColumnCoordenador.setCellValueFactory(new PropertyValueFactory<>("coordenador"));
 
         Stage stage = (Stage) Main.getMainScene().getWindow();
         tableViewDepartment.prefHeightProperty().bind(stage.heightProperty());

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.projectjfxjdbcv1.DepartamentListController">
+<VBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.projectjfxjdbcv1.DepartamentListController">
    <children>
       <Label text="Registro de Departamentos">
          <font>
@@ -24,10 +24,12 @@
           <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="Novo" />
         </items>
       </ToolBar>
-      <TableView fx:id="tableViewDepartment" prefHeight="321.0" prefWidth="600.0">
+      <TableView fx:id="tableViewDepartment" prefHeight="645.0" prefWidth="1280.0">
         <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnName" prefWidth="75.0" text="Nome" />
+          <TableColumn fx:id="tableColumnId" prefWidth="63.0" text="Id" />
+          <TableColumn fx:id="tableColumnName" prefWidth="253.0" text="Nome" />
+            <TableColumn fx:id="tableColumnGerente" prefWidth="296.0" text="Gerente" />
+            <TableColumn fx:id="tableColumnCoordenador" prefWidth="315.0" text="Coordenador (a)" />
         </columns>
       </TableView>
    </children>

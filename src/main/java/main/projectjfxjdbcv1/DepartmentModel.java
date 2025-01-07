@@ -9,14 +9,18 @@ public class DepartmentModel implements Serializable {
 
     private Integer id;
     private String name;
+    private String gerente;
+    private String coordenador;
 
     public DepartmentModel() {
 
     }
 
-    public DepartmentModel(Integer id, String name) {
+    public DepartmentModel(Integer id, String name, String gerente, String coordenador) {
         this.id = id;
         this.name = name;
+        this.gerente = gerente;
+        this.coordenador = coordenador;
 
     }
 
@@ -36,6 +40,22 @@ public class DepartmentModel implements Serializable {
         this.name = name;
     }
 
+    public String getCoordenador() {
+        return coordenador;
+    }
+
+    public void setCoordenador(String coordenador) {
+        this.coordenador = coordenador;
+    }
+
+    public String getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(String gerente) {
+        this.gerente = gerente;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof DepartmentModel that)) return false;
@@ -49,9 +69,11 @@ public class DepartmentModel implements Serializable {
 
     @Override
     public String toString() {
-        return "Department{" +
+        return "DepartmentModel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", gerente='" + gerente + '\'' +
+                ", coordenador='" + coordenador + '\'' +
                 '}';
     }
 }
