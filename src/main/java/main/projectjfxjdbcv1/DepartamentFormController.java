@@ -5,7 +5,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.projectjfxjdbcv1.model.services.DepartmentService;
 import main.projectjfxjdbcv1.util.Constraints;
+import main.projectjfxjdbcv1.util.Utils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +15,8 @@ import java.util.ResourceBundle;
 public class DepartamentFormController implements Initializable {
 
     private DepartmentModel entity;
+
+    private DepartmentService service;
 
     @FXML
     private TextField txtId;
@@ -39,15 +43,30 @@ public class DepartamentFormController implements Initializable {
     private Button btSave;
 
     @FXML
-    private  Button btCancel;
+    private Button btCancel;
 
     public void setDepartamentModel(DepartmentModel entity) {
         this.entity = entity;
     }
 
+    public void setDepartmentService(DepartmentService service) {
+        this.service = service;
+    }
+
     @FXML
     public void onBtSaveAction() {
-        System.out.println("onBtSaveAction");
+        entity = getFormData();
+        service.saveOrUpdate(entity);
+    }
+
+    private DepartmentModel getFormData() {
+        DepartmentModel obj = new DepartmentModel();
+        obj.setId(Utils.tryParseToInt(txtId.getText()));
+        obj.setName(txtName.getText());
+        obj.setGerente(txtGerente.getText());
+        obj.setCoordenador(txtCoordenadora.getText());
+
+        return obj;
     }
 
     @FXML
